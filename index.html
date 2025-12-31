@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Signup - Ghana Style</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  :root {
+    --red: #ce1126;
+    --gold: #fcd116;
+    --green: #006b3f;
+    --black: #000000;
+    --white: #ffffff;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, var(--red) 33%, var(--gold) 33% 66%, var(--green) 66%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .signup-container {
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 320px;
+    text-align: center;
+  }
+
+  h1 {
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 2px solid var(--black);
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--black);
+    color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  button:hover {
+    background-color: var(--red);
+    color: var(--white);
+  }
+</style>
+</head>
+
+<body>
+<div class="signup-container">
+  <h1>Sign Up</h1>
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="number" id="age" placeholder="Age" required>
+  <input type="text" id="nhis" placeholder="NHIS Number" required>
+  <input type="text" id="region" placeholder="Region" required>
+  <input type="text" id="city" placeholder="City" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button onclick="signup()">Sign Up</button>
+</div>
+
+<script>
+function signup() {
+  const name = document.getElementById('name').value;
+  const age = document.getElementById('age').value;
+  const nhis = document.getElementById('nhis').value;
+  const region = document.getElementById('region').value;
+  const city = document.getElementById('city').value;
+  const password = document.getElementById('password').value;
+
+  if(!name || !age || !nhis || !region || !city || !password){
+    alert('Please fill all fields');
+    return;
+  }
+
+  // Save user in localStorage
+  const user = {name, age, nhis, region, city, password};
+  localStorage.setItem('user', JSON.stringify(user));
+
+  alert('Signup successful!');
+  window.location.href = 'first_page.html'; // Redirect to main content page
+}
+</script>
+
+</body>
+<footer><a href="instructions.html" style="
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #fcd116;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+">Instructions</a>
+</footer>
+
+</html>

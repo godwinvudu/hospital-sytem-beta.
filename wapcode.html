@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital WAP Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --red: #ce1126;
+      --gold: #fcd116;
+      --green: #006b3f;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: var(--green);
+      color: var(--black);
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .hospital-info {
+      background-color: var(--gold);
+      color: var(--black);
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: 0 auto;
+      font-weight: bold;
+    }
+
+    .wap-code {
+      margin-top: 20px;
+      font-size: 24px;
+      color: var(--red);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Hospital Access Code</h1>
+
+  <div class="hospital-info">
+    Hospital: <span id="hospital-name">Loading...</span>
+    <div class="wap-code">WAP Code: <span id="wap-code">XXXX</span></div>
+  </div>
+
+  <script>
+    // Get selected hospital
+    const hospitalName = localStorage.getItem('selectedHospital') || 'Unknown Hospital';
+    document.getElementById('hospital-name').innerText = hospitalName;
+
+    // Generate simple WAP code (random example)
+    const code = hospitalName.split(' ').map(word => word[0]).join('').toUpperCase() + Math.floor(Math.random()*9000+1000);
+    document.getElementById('wap-code').innerText = code;
+  </script>
+
+</body>
+</html>

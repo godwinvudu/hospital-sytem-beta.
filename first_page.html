@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select a Hospital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* Ghana Flag Colors */
+    :root {
+      --red: #ce1126;
+      --gold: #fcd116;
+      --green: #006b3f;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: var(--green);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    p {
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .region-select {
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: none;
+      font-weight: bold;
+      background-color: var(--gold);
+      color: var(--black);
+      cursor: pointer;
+    }
+
+    .region-select:hover {
+      background-color: var(--red);
+      color: var(--white);
+    }
+
+    .hospital-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .hospital-card {
+      background-color: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      border-top: 6px solid var(--red);
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    .hospital-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hospital-card div {
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .hospital-card:hover {
+      outline: 3px solid var(--gold);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Region Selector -->
+  <div class="top-bar">
+    <select class="region-select" onchange="location = this.value;">
+      <option value="#">Change Region</option>
+      <option value="first_page.html">Accra</option>
+      <option value="eastern.html">Eastern Region</option>
+      <option value="ashanti.html">Ashanti Region</option>
+    </select>
+  </div>
+
+  <h1>Select a Hospital in Accra</h1>
+  <p>Tap on a hospital to continue</p>
+
+  <div class="hospital-grid">
+    <div class="hospital-card" onclick="selectHospital('Korle Bu Teaching Hospital')">
+      <img src="Korle-Bu-2.webp" alt="Korle Bu Teaching Hospital">
+      <div>Korle Bu Teaching Hospital</div>
+    </div>
+
+    <div class="hospital-card" onclick="selectHospital('Greater Accra Regional Hospital')">
+      <img src="Ridge hospital.webp" alt="Ridge Hospital">
+      <div>Greater Accra Regional Hospital (Ridge)</div>
+    </div>
+
+    <div class="hospital-card" onclick="selectHospital('37 Military Hospital')">
+      <img src="17937541.webp" alt="37 Military Hospital">
+      <div>37 Military Hospital</div>
+    </div>  
+    <div class="hospital-card" onclick="selectHospital('Legon Hospital')">
+      <img src="ug hospital.webp" alt="Legon Hospital">
+      <div>Legon Hospital</div>
+    </div>
+
+  </div>
+<script>
+    function selectHospital(hospitalName) {
+      // Save selected hospital in localStorage
+      localStorage.setItem('selectedHospital', hospitalName);
+      // Redirect to services page
+      window.location.href = 'services.html';
+    }
+  </script>
+</body>
+</html>
+
