@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #006b3f, #fcd116);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 14px;
+      box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+      border-top: 6px solid #ce1126;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #000000;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #ce1126;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 13px;
+      background: #ce1126;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a50e1e;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .link a {
+      color: #006b3f;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+    
+
+
+  <div class="card">
+    <h1>Sign In</h1>
+
+    <form>
+      <label>NHIS Number</label>
+      <input type="text" placeholder="Enter your NHIS number">
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter your password">
+</form>
+     <a href="first_page.html"><button>Sign In</button></a>
+    
+
+    <div class="link">
+      <a href="index.html">Create a new account</a>
+    </div>
+  </div>
+
+</body>
+</html>

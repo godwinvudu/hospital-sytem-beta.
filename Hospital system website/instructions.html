@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instructions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  :root {
+    --red: #ce1126;
+    --gold: #fcd116;
+    --green: #006b3f;
+    --black: #000000;
+    --white: #ffffff;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, var(--red) 33%, var(--gold) 33% 66%, var(--green) 66%);
+    color: var(--black);
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  ol {
+    font-size: 16px;
+    line-height: 1.8;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  .note {
+    margin-top: 20px;
+    background-color: var(--gold);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: var(--black);
+    color: var(--gold);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: var(--red);
+    color: var(--white);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>How to Use the Hospital System</h1>
+
+  <ol>
+    <li><strong>Sign Up:</strong> Create your account on the Signup page. Fill in your name, age, NHIS number, region, city, and password.</li>
+    <li><strong>Login:</strong> If you already have an account, use the Login page to access the system.</li>
+    <li><strong>Select Region:</strong> Choose your region (Accra, Eastern, or Ashanti) to view hospitals available in that region.</li>
+    <li><strong>Select Hospital:</strong> Click on the hospital image to select it. This will take you to the Services page.</li>
+    <li><strong>View Services:</strong> On the Services page, see the list of available hospital services. Confirm your selection.</li>
+    <li><strong>Get WAP Code:</strong> After confirming the hospital, the system will generate your unique WAP code to access the hospital network.</li>
+    <li><strong>Access Hospital:</strong> Use the WAP code at the hospital to connect to their system and be added to the service queue.</li>
+  </ol>
+
+  <div class="note">
+    Note: Your account and WAP code are stored temporarily in your browser. Do not clear browser storage while using the system.
+  </div>
+
+  <a href="index.html" class="btn">Go to Start</a>
+</div>
+
+</body>
+</html>

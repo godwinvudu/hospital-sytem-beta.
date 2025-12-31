@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --red: #ce1126;
+      --gold: #fcd116;
+      --green: #006b3f;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: var(--green);
+      color: var(--black);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--white);
+    }
+
+    .hospital-selected {
+      background-color: var(--gold);
+      color: var(--black);
+      padding: 12px;
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background-color: var(--white);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--black);
+      border-top: 6px solid var(--red);
+    }
+
+    .service-card:hover {
+      outline: 3px solid var(--gold);
+    }
+
+    .confirm-btn {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 30px auto;
+      padding: 12px;
+      background-color: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .confirm-btn:hover {
+      background-color: var(--black);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Hospital Services</h1>
+
+  <div class="hospital-selected" id="hospital-name">
+    I selected: 
+  </div>
+
+  <div class="services">
+    <div class="service-card">Outpatient Department</div>
+    <div class="service-card">Pharmacy</div>
+    <div class="service-card">Laboratory</div>
+    <div class="service-card">Radiology</div>
+    <div class="service-card">Surgery</div>
+  </div>
+
+  <a href="wapcode.html" class="confirm-btn">Confirm Hospital & Get WAP Code</a>
+
+  <script>
+    // Display selected hospital
+    const hospitalName = localStorage.getItem('selectedHospital') || 'Unknown Hospital';
+    document.getElementById('hospital-name').innerText = 'I selected: ' + hospitalName;
+  </script>
+
+</body>
+</html>
